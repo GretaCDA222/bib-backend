@@ -1,5 +1,9 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+
 const app = express()
+app.use(bodyParser.json())
+
 
 const musiquesRoutes = require('./routes/musiques-routes')
 const filmsRoutes = require('./routes/films-routes')
