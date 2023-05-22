@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+require('dotenv').config();
 
 const HttpError = require('./utils/http-error')
 
@@ -32,7 +33,7 @@ const uri = 'mongodb+srv://gretaUser:bCx1m4K49VIpKttf@gretalaurent.sdfgski.mongo
 
 mongoose.connect(uri)
     .then(() => {
-        app.listen(5000);
+        app.listen(process.env.PORT);
         console.log("Server running");
     })
     .catch(err => {
